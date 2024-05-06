@@ -3,7 +3,14 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            discs:[]
+            discs:[],
+            infoDisc: {
+                title: '',
+                author: '',
+                year: '',
+                poster:''
+            },
+            info: false
         };
     },
     methods: {
@@ -13,6 +20,17 @@ createApp({
                 this.discs = response.data;
                 
             }); 
+        },
+        getDiscInfo(index){
+            this.infoDisc.title = this.discs[index].title;
+            this.infoDisc.author = this.discs[index].author;
+            this.infoDisc.year = this.discs[index].year;
+            this.infoDisc.poster = this.discs[index].poster;
+            this.info = true
+        },
+        removeInfo(){
+            this.info = false
+            // alert('ciao')
         }
     },
     mounted() {

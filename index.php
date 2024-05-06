@@ -12,35 +12,48 @@
 </head>
 
 <body>
-<div id="app">
+    <div id="app">
+        <div class="d-flex vh-100 align-items-center">
+            <div class="container d-flex justify-content-center">
+                <div class="mx-auto text-center position-relative " style="width: 80%; ">
+                    <div class=" row text-warning bg-black text-start">
+                        <h1>Discs</h1>
+                    </div>
+                    <div v-if='info'  class="info-disc">
+                        <div class="d-flex">
+                            <div class="img-size">
+                                <img :src="infoDisc.poster" alt="">
+                            </div>
 
-
-    <div class="d-flex vh-100 align-items-center">
-        <div class="container d-flex justify-content-center">
-            <div class="mx-auto text-center" style="width: 80%; ">
-                <div class="bg-info row">
-                    <h1>title</h1>
-                </div>
-
-                <div class="row bg-info-subtle p-4 ">
-                    <div v-for='disc in discs' class="card col-lg-4 col-md-6 col-sm-12 ">
-                        <img :src="disc.poster" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">{{disc.title}}</p>
-                            <p><small>{{disc.author}}</small></p>
-                            <p>{{disc.year}}</p>
-                            
+                            <div class="card-body d-flex text-white flex-column justify-content-center ">
+                                <p class="fw-bold fs-5">{{infoDisc.title}}</p>
+                                <p><small>{{infoDisc.author}}</small></p>
+                                <p class="fw-bold fs-5">{{infoDisc.year}}</p>
+                            </div>
+                            <div @click='removeInfo' class="position-absolute fs-1 text-white bg-dark  m-3 rounded-circle top-0 end-0"  style="width: 60px;height:60px;">
+                                X
+                            </div>
                         </div>
                     </div>
-                    
+                    <div class="row  p-4 bg-dark ">
+                        <div v-for='(disc, index) in discs' @click='getDiscInfo(index)' class="card col-lg-4 col-md-6 col-sm-12 bg-dark text-secondary border-secondary p-2 ">
+                            <img :src="disc.poster" class="card-img-top rounded-circle" alt="...">
+                            <div class="card-body">
+                                <p class="fw-bold fs-5">{{disc.title}}</p>
+                                <p><small>{{disc.author}}</small></p>
+                                <p class="fw-bold fs-5">{{disc.year}}</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
                 </div>
-
-
-
             </div>
         </div>
     </div>
-</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
