@@ -12,6 +12,9 @@
 </head>
 
 <body>
+<div id="app">
+
+
     <div class="d-flex vh-100 align-items-center">
         <div class="container d-flex justify-content-center">
             <div class="mx-auto text-center" style="width: 80%; ">
@@ -20,42 +23,16 @@
                 </div>
 
                 <div class="row bg-info-subtle p-4 ">
-                    <div class="card col-lg-4 col-md-6 col-sm-12 ">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/411BQR6BHRL.jpg" class="card-img-top" alt="...">
+                    <div v-for='disc in discs' class="card col-lg-4 col-md-6 col-sm-12 ">
+                        <img :src="disc.poster" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Some quick example</p>
+                            <p class="card-text">{{disc.title}}</p>
+                            <p><small>{{disc.author}}</small></p>
+                            <p>{{disc.year}}</p>
+                            
                         </div>
                     </div>
-                    <div class="card col-lg-4 col-md-6 col-sm-12 ">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/411BQR6BHRL.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example</p>
-                        </div>
-                    </div>
-                    <div class="card col-lg-4 col-md-6 col-sm-12 ">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/411BQR6BHRL.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example</p>
-                        </div>
-                    </div>
-                    <div class="card col-lg-4 col-md-6 col-sm-12 ">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/411BQR6BHRL.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example</p>
-                        </div>
-                    </div>
-                    <div class="card col-lg-4 col-md-6 col-sm-12 ">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/411BQR6BHRL.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example</p>
-                        </div>
-                    </div>
-                    <div class="card col-lg-4 col-md-6 col-sm-12 ">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/411BQR6BHRL.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example</p>
-                        </div>
-                    </div>
+                    
                 </div>
 
 
@@ -63,6 +40,7 @@
             </div>
         </div>
     </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
